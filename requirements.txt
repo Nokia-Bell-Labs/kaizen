@@ -1,0 +1,8 @@
+torch==1.10
+torchvision
+pytorch-lightning
+lightning-bolts
+wandb
+scikit-learn
+einops
+torchaudio

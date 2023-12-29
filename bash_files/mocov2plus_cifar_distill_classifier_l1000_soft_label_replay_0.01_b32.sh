@@ -1,0 +1,56 @@
+python3 main_continual.py \
+    --dataset cifar100 \
+    --encoder resnet18 \
+    --data_dir $DATA_DIR \
+    --split_strategy class \
+    --max_epochs 2 \
+    --num_tasks 5 \
+    --task_idx 0 \
+    --gpus 0 \
+    --precision 16 \
+    --optimizer sgd \
+    --lars \
+    --grad_clip_lars \
+    --eta_lars 0.02 \
+    --exclude_bias_n_norm \
+    --scheduler warmup_cosine \
+    --lr 1.0 \
+    --classifier_lr 0.1 \
+    --weight_decay 1e-5 \
+    --batch_size 256 \
+    --num_workers 2 \
+    --brightness 0.4 \
+    --contrast 0.4 \
+    --saturation 0.2 \
+    --hue 0.1 \
+    --gaussian_prob 0.0 0.0 \
+    --solarization_prob 0.0 0.2 \
+    --name cifar100-mocov2plus-contrastive-distill-classifier-l1000-soft-label-replay-0.01-b32 \
+    --project ever-learn \
+    --entity your_entity \
+    --offline \
+    --wandb \
+    --save_checkpoint \
+    --output_dim 256 \
+    --proj_hidden_dim 2048 \
+    --queue_size 65536 \
+    --temperature 0.2 \
+    --base_tau_momentum 0.99 \
+    --final_tau_momentum 0.999 \
+    --momentum_classifier \
+    --disable_knn_eval \
+    --online_eval_classifier_lr 0.1 \
+    --classifier_training True \
+    --classifier_stop_gradient True \
+    --classifier_layers 1000 \
+    --distiller_library factory \
+    --method mocov2plus \
+    --distiller contrastive \
+    --classifier_distill_lamb 2.0 \
+    --distiller_classifier soft_label \
+    --classifier_distill_no_predictior True \
+    --replay True \
+    --replay_proportion 0.01 \
+    --replay_batch_size 32 \
+    --online_evaluation True \
+    --online_evaluation_training_data_source seen_tasks
