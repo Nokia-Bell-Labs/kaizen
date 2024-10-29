@@ -58,3 +58,7 @@ Please cite our paper if any part of this repository is used in any research wor
   year={2024}
 }
 ```
+
+# License
+
+This project is licensed under the [BSD 3-Clause Clear License](LICENSE.md).
